@@ -82,7 +82,7 @@ let DataUtil = function () {
         }
 
         let year = date.getFullYear();
-        let month = date.toLocaleString('en-US', { month: 'short' });
+        let month = date.getMonth() + 1; // 日本語表記では月を数字で表示
         let day = date.getDate();
         let hour = date.getHours();
         let min = date.getMinutes();
@@ -93,7 +93,7 @@ let DataUtil = function () {
         min = (min < 10 ? "0" : "") + min;
         sec = (sec < 10 ? "0" : "") + sec;
 
-        return month + " " + day + ", " + year + " " + hour + ":" + min + ":" + sec;
+        return year + "年" + month + "月" + day + "日 " + hour + ":" + min + ":" + sec;
     }
 
     function getColorBetween(color1, color2, percent) {
